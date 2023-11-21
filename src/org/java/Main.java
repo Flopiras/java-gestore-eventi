@@ -1,9 +1,18 @@
 package org.java;
 
+import java.math.BigDecimal;
+import java.time.LocalTime;
 import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) throws Exception {
+		
+		Concert c = new Concert("Concerto di Ed Sheeran", "2023-12-23", 952, LocalTime.of(21, 15, 12, 999999999), new BigDecimal("92.35"));
+		System.out.println("\n-----------------------------\n"
+				+ "CONCERTO " + c.toString()
+				+ "\n-----------------------------\n"
+				);
+		
 
 		// open Scanner
 		Scanner in = new Scanner(System.in);
@@ -88,6 +97,7 @@ public class Main {
 
 			// close Scanner
 			in.close();
+			
 		}
 	}
 
