@@ -107,6 +107,9 @@ public class Event {
 	public void disdici() throws Exception {
 		if (eventIsExpired() || reservedSeats <= 0)
 			throw new Exception("Non ci sono prenotazioni da disdire");
+		
+		reservedSeats -= 1;
 	}
+	
 
 }
