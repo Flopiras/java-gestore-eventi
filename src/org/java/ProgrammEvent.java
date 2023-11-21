@@ -2,6 +2,7 @@ package org.java;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ProgrammEvent {
@@ -47,4 +48,12 @@ public class ProgrammEvent {
 				
 			events.clear();
 	}
+	
+	public String getEventsSortedByDate() {
+        String sortedEvents = null;
+
+        
+
+        return sortedEvents;
+    }
 }
