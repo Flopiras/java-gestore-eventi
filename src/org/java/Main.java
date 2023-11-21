@@ -38,7 +38,7 @@ public class Main {
 			String strDay = in.nextLine().trim();
 			int day = Integer.valueOf(strDay);
 			
-			LocalDate date = LocalDate.of(year, month, month);
+			LocalDate date = LocalDate.of(year, month, day);
 
 			System.out.println("Numero di posti totale: ");
 			String strSeatcCapacity = in.nextLine().trim();
@@ -48,7 +48,7 @@ public class Main {
 
 			System.out.println("\n-------------------------------\n" + "Evento: " + event.getTitle() + "\n" + "Data: "
 					+ event.getFormatDate(date) + "\n" + "Posti prenotati: " + event.getReservedSeats() + "\n"
-					+ "Posti disponibili" + event.getAvaiableSeats() + "\n-------------------------------\n");
+					+ "Posti disponibili: " + event.getAvaiableSeats() + "\n-------------------------------\n");
 
 		} catch (Exception e) {
 			System.out.println("ERRORE: " + e.getMessage());
