@@ -41,7 +41,7 @@ public class Event {
 		LocalDate eventDate = LocalDate.parse(date);
 		
 		// control
-		if (eventDate.isAfter(today))
+		if (eventIsExpired())
 			throw new Exception("La data è già passata");
 
 		this.date = date;
@@ -85,6 +85,23 @@ public class Event {
 		System.out.println(formattedDate);
 
 		return formattedDate;
+	}
+	
+	public boolean eventIsExpired() {
+		
+		LocalDate today = LocalDate.now();
+		LocalDate eventDate = LocalDate.parse(date);
+		
+		return today.isAfter(eventDate) ? true : false;
+		
+	}
+	
+	public void prenota() throws Exception {
+		
+		if (eventIsExpired() || seatsCapacity < reservedSeats)
+			throw new Exception("Impossibile prenotare i posti");
+		
+		reservedSeats += 1;	
 	}
 
 }
