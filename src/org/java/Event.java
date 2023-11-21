@@ -89,6 +89,11 @@ public class Event {
 		reservedSeats -= 1;
 	}
 	
+	public int getAvaiableSeats() {
+		
+		return (seatsCapacity - reservedSeats);
+	}
+	
 	//overrides
 	@Override
 	public String toString() {
