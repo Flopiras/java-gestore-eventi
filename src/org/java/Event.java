@@ -51,7 +51,12 @@ public class Event {
 		return seatsCapacity;
 	}
 
-	public void setSeatsCapacity(int seatsCapacity) {
+	public void setSeatsCapacity(int seatsCapacity) throws Exception {
+		
+		//control
+		if(seatsCapacity <= 0)
+			throw new Exception("I posti totali non possono essere meno di 1");
+			
 		this.seatsCapacity = seatsCapacity;
 	}
 
