@@ -6,11 +6,11 @@ import java.time.format.DateTimeFormatter;
 public class Event {
 
 	private String title;
-	private String date;
+	private LocalDate date;
 	private int seatsCapacity;
 	private int reservedSeats;
 
-	public Event(String title, String date, int seatsCapacity) throws Exception {
+	public Event(String title, LocalDate date, int seatsCapacity) throws Exception {
 
 		reservedSeats = 0;
 
@@ -27,11 +27,11 @@ public class Event {
 		this.title = title;
 	}
 
-	public String getDate() {
+	public LocalDate getDate() {
 		return date;
 	}
 
-	public void setDate(String date) throws Exception {
+	public void setDate(LocalDate date) throws Exception {
 
 		// control
 		if (eventIsExpired(date))
@@ -58,19 +58,18 @@ public class Event {
 	}
 
 	// METHODS
-	public String getFormatDate(String date) {
+	public String getFormatDate(LocalDate date) {
 
-		LocalDate localDate = LocalDate.parse(date);
-        return localDate.format(DateTimeFormatter.ofPattern("dd/LLLL/yyyy"));
+		//LocalDate localDate = LocalDate.parse(date);
+        return date.format(DateTimeFormatter.ofPattern("dd/LLLL/yyyy"));
 			
 	}
 	
-	public boolean eventIsExpired(String date) {
+	public boolean eventIsExpired(LocalDate date) {
 		
 		LocalDate today = LocalDate.now();
-		LocalDate eventDate = LocalDate.parse(date);
 		
-		return today.isAfter(eventDate) ? true : false;
+		return today.isAfter(date) ? true : false;
 		
 	}
 	

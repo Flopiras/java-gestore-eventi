@@ -1,13 +1,14 @@
 package org.java;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) throws Exception {
 		
-		Concert c = new Concert("Concerto di Ed Sheeran", "2023-12-23", 952, LocalTime.of(21, 15, 12, 999999999), new BigDecimal("92.35"));
+		Concert c = new Concert("Concerto di Ed Sheeran", LocalDate.of(2023, 12, 25), 952, LocalTime.of(21, 15, 12, 999999999), new BigDecimal("92.35"));
 		System.out.println("\n-----------------------------\n"
 				+ "CONCERTO " + c.toString()
 				+ "\n-----------------------------\n"
@@ -23,8 +24,21 @@ public class Main {
 			System.out.println("Nome evento: ");
 			String title = in.nextLine().trim();
 
-			System.out.println("Data evento (yyyy-mm-dd): ");
-			String date = in.nextLine().trim();
+			//System.out.println("Data evento (yyyy-mm-dd): ");
+			//String date = in.nextLine().trim();
+			System.out.println("In che anno si svolge l'evento?");
+			String strYear = in.nextLine().trim();
+			int year = Integer.valueOf(strYear);
+			
+			System.out.println("In che mese? (es: Gennaio = 01");
+			String strMonth = in.nextLine().trim();
+			int month = Integer.valueOf(strMonth);
+			
+			System.out.println("Giorno?");
+			String strDay = in.nextLine().trim();
+			int day = Integer.valueOf(strDay);
+			
+			LocalDate date = LocalDate.of(year, month, month);
 
 			System.out.println("Numero di posti totale: ");
 			String strSeatcCapacity = in.nextLine().trim();

@@ -1,6 +1,7 @@
 package org.java;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
@@ -9,7 +10,7 @@ public class Concert extends Event {
 	private LocalTime time;
 	private BigDecimal price;
 
-	public Concert(String title, String date, int seatsCapacity, LocalTime time, BigDecimal price) throws Exception {
+	public Concert(String title, LocalDate date, int seatsCapacity, LocalTime time, BigDecimal price) throws Exception {
 		super(title, date, seatsCapacity);
 
 		setTime(time);

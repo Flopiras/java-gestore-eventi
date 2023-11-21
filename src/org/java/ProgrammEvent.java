@@ -1,5 +1,6 @@
 package org.java;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,5 +24,22 @@ public class ProgrammEvent {
 	}
 	
 	//methods
+	public void addEvent(Event e) {
+		events.add(e);
+	}
 	
+	public List<Event> getEventsOnDate(LocalDate date) {
+		
+		List<Event> eventsOnDate = new ArrayList<>();
+		
+		for (Event event : events) {
+			
+			if(event.getDate().equals(date)) {
+				eventsOnDate.add(event);
+			}
+			
+		}
+		
+		return eventsOnDate;
+	}
 }
