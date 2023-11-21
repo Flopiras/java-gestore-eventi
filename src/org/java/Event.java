@@ -51,7 +51,7 @@ public class Event {
 		return seatsCapacity;
 	}
 
-	public void setSeatsCapacity(int seatsCapacity) throws Exception {
+	private void setSeatsCapacity(int seatsCapacity) throws Exception {
 		
 		//control
 		if(seatsCapacity <= 0)
@@ -62,10 +62,6 @@ public class Event {
 
 	public int getReservedSeats() {
 		return reservedSeats;
-	}
-
-	public void setReservedSeats(int reservedSeats) {
-		this.reservedSeats = reservedSeats;
 	}
 
 	// METHODS
