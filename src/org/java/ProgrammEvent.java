@@ -23,6 +23,14 @@ public class ProgrammEvent {
 	public void setTitle(String title) {
 		this.title = title;
 	}
+	
+	public List<Event> getEvents() {
+		return events;
+	}
+
+	public void setEvents(List<Event> events) {
+		this.events = events;
+	}
 
 	// methods
 	public void addEvent(Event e) {
@@ -49,11 +57,14 @@ public class ProgrammEvent {
 			events.clear();
 	}
 	
-	public String getEventsSortedByDate() {
-        String sortedEvents = null;
-
-        
-
-        return sortedEvents;
+	public List<Event> getEventsSortedByDate(LocalDate date) {
+		List<Event> filteredEvent = new ArrayList<>();
+		for (Event e : getEvents()) 
+			if (date.isEqual(e.getDate()))
+				filteredEvent.add(e);
+		
+		return filteredEvent; 
     }
+
+	
 }
